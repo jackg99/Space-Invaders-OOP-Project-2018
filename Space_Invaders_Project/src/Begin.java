@@ -2,11 +2,12 @@ import javax.swing.JFrame;
 
 public class Begin extends JFrame {
 
-    public Begin() {
-        //add(new ());
-        setTitle("Board");
+    public Begin()
+    {
+        add(new Board());
+        setTitle("SPACE INVADERS");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(500, 500);
+        setSize(500,500);
         setLocationRelativeTo(null);
         setVisible(true);
         setResizable(false);
@@ -16,4 +17,3 @@ public class Begin extends JFrame {
         new Begin();
     }
 }
-
