@@ -5,9 +5,9 @@ public abstract class Character {
     int x;
     int y;
     int speed;
-    Color colour;
-    int width;
-    int height;
+    //Color colour;
+    //int width;
+    //int height;
 
     public Character(){
 

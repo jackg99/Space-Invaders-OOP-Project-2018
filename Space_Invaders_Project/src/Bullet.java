@@ -1,9 +1,22 @@
+import java.awt.*;
+
 public class Bullet {
 
-    //attributes for x and y position on screen, colour, width, height
+    int x;
+    int y;
+    int speed;
 
-    //Bullet constructor
+    public Bullet(){
 
-    //boolean collidesWith(Alien a)
+        //boolean collidesWith(Alien a)
+
+    }
+
+    public Bullet(int x, int y, int speed){
+        this.x = x;
+        this.y = y;
+        this.speed = speed;
+    }
 
 }
+

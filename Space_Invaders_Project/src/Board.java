@@ -35,7 +35,7 @@ public class Board extends JPanel implements Runnable
     ArrayList<Bullet> bullets  = new ArrayList<Bullet>(); //loop through these each time screen needs to be updated
 
 
-    public Board() //https://stackoverflow.com/questions/29748284/the-use-of-setfocusable-in-java
+    public Board()
     {
         addKeyListener(new KAdapter());
         setFocusable(true);
@@ -63,7 +63,7 @@ public class Board extends JPanel implements Runnable
     }
 
 
-    public void paint(Graphics graphics)  //http://www.java2s.com/Code/JavaAPI/java.awt/GraphicsfillRectintxintyintwidthintheight.htm
+    public void paint(Graphics graphics)
     {
         super.paint(graphics);
 
@@ -78,11 +78,23 @@ public class Board extends JPanel implements Runnable
 
         if(p.moveLeft==true)
             p.x -= p.speed;
+
         moveAliens();
         for(int i=0; i<a.length; i++) {
             graphics.setColor(Color.green);
             graphics.fillRect(a[i].x, a[i].y, 30, 30);
         }
+
+        //JB - added some code to get bullets rendering but Jack will
+        //need to alter to get bullets to fire from location of tank
+
+        for(int i=0; i<bullets.size(); i++) {
+            bullets.get(i).y -= bullets.get(i).speed;
+            graphics.setColor(Color.white);
+            graphics.fillRect(bullets.get(i).x, bullets.get(i).y, 5, 10);
+
+        }
+
 
         Font small = new Font("Helvetica", Font.ITALIC, 14);
         FontMetrics metr = this.getFontMetrics(small);
@@ -138,19 +150,23 @@ public class Board extends JPanel implements Runnable
 
         }
 
-        public void keyPressed(KeyEvent e) { //https://docs.oracle.com/javase/7/docs/api/java/awt/event/KeyEvent.html
+        public void keyPressed(KeyEvent e) {
 
             int key = e.getKeyCode();
-            if(key==e.VK_LEFT){
+            if(key==e.VK_RIGHT){
                 p.moveRight=true;
             }
 
-            if(key==e.VK_RIGHT){
+            if(key==e.VK_LEFT){
                 p.moveLeft=true;
             }
 
+
+            //JB - added some code to get bullets created
             if(key==e.VK_SPACE){
-                //fireBullet();
+                Bullet b = new Bullet(250,500,3);
+                bullets.add(b);
+
                 //you want a bullet to emerge from the top of the tank wherever it may be at the time
                 //create a Bullet object with a certain position, certain colour, certain width/height
                 //Add the bullet to an ArrayList of bullets

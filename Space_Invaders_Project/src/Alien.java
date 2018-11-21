@@ -4,7 +4,7 @@ public class Alien extends Character{
     boolean moveRight;
     boolean moveLeft;
     boolean isVisible;
-    boolean destroyed;
+    //boolean destroyed;
     //String direction;
 
     public Alien(int x, int y, int speed){
