@@ -8,7 +8,7 @@ public class Bullet {
 
     public Bullet(){
 
-        //boolean collidesWith(Alien a)
+        boolean coolidesWith;
 
     }
 
@@ -19,4 +19,3 @@ public class Bullet {
     }
 
 }
-

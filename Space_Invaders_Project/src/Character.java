@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.ArrayList;
 
 public abstract class Character {
 
@@ -19,8 +20,5 @@ public abstract class Character {
         this.y = y;
         this.speed = speed;
     }
-
-
-
 
 }
