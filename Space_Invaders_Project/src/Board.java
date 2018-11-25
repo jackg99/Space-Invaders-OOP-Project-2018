@@ -1,14 +1,14 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.FontMetrics;
+//import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.JPanel;
-import java.awt.Rectangle;
+import java.awt.Rectangle; //for collision
 
 
 public class Board extends JPanel implements Runnable {
@@ -45,6 +45,7 @@ public class Board extends JPanel implements Runnable {
             }
         }
 
+        //Animator (thread) Help From: https://coderanch.com/t/578969/java/Threads-instance-variables
 
         if (animator == null || !ingame) {
             animator = new Thread(this);
@@ -54,6 +55,8 @@ public class Board extends JPanel implements Runnable {
     }
 
     //Graphics/Paint
+    //Help From: https://www.oracle.com/technetwork/java/painting-140037.html
+    //Help From: https://docs.oracle.com/javase/7/docs/api/java/awt/Graphics2D.html
     public void paint(Graphics graphics) {
         super.paint(graphics);
         Graphics2D g2d = (Graphics2D) graphics;
@@ -89,22 +92,25 @@ public class Board extends JPanel implements Runnable {
 
         }
 
-        //Attempted to get bullets and aliens colliding (kind of works but game crashes when firing too many bullets)
+
+
+
+        //Attempted to get bullets and aliens colliding (Bullets disappear when they collide with an alien, but game crashes after firing too many bullets)
 
               /*Rectangle r1 = new Rectangle(a[i].x, a[i].y, 30, 30);
                 Rectangle r2 = new Rectangle(bullets.get(i).x, bullets.get(i).y, 30, 30);
                 Rectangle r3 = new Rectangle(p.x, p.y, 20, 20);
-
-
                 if(r1.intersects(r2))
                 {
                     bullets.remove(bullets.get(i));
-
                 }*/
 
+
+
+
         //Score Text
+        //Help From: https://docs.oracle.com/javase/7/docs/api/java/awt/Font.html
         Font small = new Font("Helvetica", Font.BOLD, 14);
-        FontMetrics metr = this.getFontMetrics(small);
         graphics.setColor(Color.white);
         graphics.setFont(small);
         graphics.drawString(message, 10, d.height - 475);
@@ -116,11 +122,11 @@ public class Board extends JPanel implements Runnable {
     public void moveAliens() {
         for (int i = 0; i < a.length; i++) {
             if (a[i].moveLeft == true) {
-                a[i].x -= 2; //a[i].speed;
+                a[i].x -= 2;
             }
 
             if (a[i].moveRight == true) {
-                a[i].x += 2; //a[i].speed;
+                a[i].x += 2;
             }
         }
 
@@ -152,7 +158,7 @@ public class Board extends JPanel implements Runnable {
     private class KAdapter extends KeyAdapter {
 
         public void keyReleased(KeyEvent e) {
-            int key = e.getKeyCode();
+          //  int key = e.getKeyCode();
             p.moveRight = false;
             p.moveLeft = false;
 
@@ -184,9 +190,10 @@ public class Board extends JPanel implements Runnable {
     }
 
     //Thread and time
+    //Help From: https://docs.oracle.com/javase/7/docs/api/
     public void run() {
 
-        long beforeTime, timeDiff, sleep;
+       // long beforeTime, timeDiff, sleep;
 
         int animationDelay = 5;
         long time =

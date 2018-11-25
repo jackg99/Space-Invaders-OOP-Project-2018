@@ -4,11 +4,13 @@ public class Bullet {
     int y;
     int speed;
 
+    /*(Attempt collision code)
+
     public Bullet(){
 
-        //boolean coolidesWith;
+        //boolean collidesWith;
 
-    }
+    }*/
 
     public Bullet(int x, int y, int speed){
         this.x = x;

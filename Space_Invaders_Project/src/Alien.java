@@ -2,7 +2,7 @@ public class Alien extends Character{
 
     boolean moveRight;
     boolean moveLeft;
-    boolean isVisible;
+    //boolean isVisible;
 
 
     public Alien(int x, int y, int speed){
@@ -10,7 +10,7 @@ public class Alien extends Character{
 
         moveLeft=false;
         moveRight=true;
-        isVisible=true;
+        //isVisible=true;
     }
 
 

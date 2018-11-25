@@ -4,10 +4,6 @@ public abstract class Character {
     int y;
     int speed;
 
-    public Character(){
-
-    }
-
 
     public Character(int x, int y, int speed){
         this.x = x;
