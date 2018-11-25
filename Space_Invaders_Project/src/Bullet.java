@@ -1,5 +1,3 @@
-import java.awt.*;
-
 public class Bullet {
 
     int x;
@@ -8,7 +6,7 @@ public class Bullet {
 
     public Bullet(){
 
-        boolean coolidesWith;
+        //boolean coolidesWith;
 
     }
 

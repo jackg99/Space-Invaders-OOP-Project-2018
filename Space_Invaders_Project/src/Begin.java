@@ -1,4 +1,5 @@
 import javax.swing.JFrame;
+import java.awt.Rectangle;
 
 public class Begin extends JFrame {
 
@@ -11,6 +12,7 @@ public class Begin extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
         setResizable(false);
+
     }
 
     public static void main(String[] args) {
