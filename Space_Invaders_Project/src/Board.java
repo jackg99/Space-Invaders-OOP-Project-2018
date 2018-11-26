@@ -107,13 +107,25 @@ public class Board extends JPanel implements Runnable {
 
 
 
-
         //Score Text
         //Help From: https://docs.oracle.com/javase/7/docs/api/java/awt/Font.html
         Font small = new Font("Helvetica", Font.BOLD, 14);
         graphics.setColor(Color.white);
         graphics.setFont(small);
         graphics.drawString(message, 10, d.height - 475);
+
+
+
+
+       /* JLabel scoreLabel = new JLabel("Score: 0");
+
+
+        public void someoneScored()
+        {
+            score++;
+
+            scoreLabel.setText("Score: " + score);
+        }*/
 
 
     }

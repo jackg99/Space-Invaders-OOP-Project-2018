@@ -1,8 +1,8 @@
 /**
  * Object Oriented Programming Project 2018
- * simply displays "Hello World!" to the standard output.
+ * This my take on the classic game Space Invaders.
  *
- * @author  Jack Gammon T00198993
+ * @author  Jack Gammon T No. T00198993
  * @version 1.0
  *
  * The Alien class contains all variables for the invaders "Aliens".
